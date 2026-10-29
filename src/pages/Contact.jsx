@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const FORM_ID = import.meta.env.VITE_FORMSPREE_ID || 'mgaazrew'
 
@@ -28,9 +29,14 @@ export default function Contact() {
   }
 
   return (
-    <div>
-      <h1>Contact</h1>
-      <p>Have a question or opportunity? Send me a message.</p>
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+    >
+      <h1 className="page-title">Contact</h1>
+      <p className="page-sub">Have a question or opportunity? Send me a message.</p>
+
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
@@ -50,6 +56,18 @@ export default function Contact() {
         {status === 'ok' && <div className="msg ok">Thanks! Your message was sent.</div>}
         {status === 'err' && <div className="msg err">Something went wrong. Please try again.</div>}
       </form>
-    </div>
+
+      <div className="section">
+        <h2>Elsewhere</h2>
+        <div className="card">
+          <p>
+            Email: <a href="mailto:nikhil.shinde@classgrid.in">nikhil.shinde@classgrid.in</a>
+          </p>
+          <p style={{ marginTop: 8 }}>
+            LinkedIn: <a href="https://linkedin.com/in/nikhil-shinde-286937367" target="_blank" rel="noreferrer">linkedin.com/in/nikhil-shinde-286937367</a>
+          </p>
+        </div>
+      </div>
+    </motion.div>
   )
 }
