@@ -13,12 +13,12 @@ const projects = [
   },
   {
     name: 'GridX',
-    link: 'https://classgrid.in',
+    link: 'https://www.npmjs.com/package/@classgrid/gridx',
     desc: "Classgrid's own React UI component library, used to keep every Classgrid app consistent.",
   },
   {
     name: 'Classgrid connector (MCP)',
-    link: 'https://classgrid.in',
+    link: 'https://github.com/Classgrid/Classgrid_Agent/blob/main/integrations/MCP_SETUP.md',
     desc: "Lets Claude and ChatGPT read a user's Classgrid schedules, chats and profile with their permission.",
   },
 ]

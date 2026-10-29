@@ -1,6 +1,6 @@
-# nikhilshinde.dev
+# Nikhil Shinde — Portfolio
 
-Portfolio website for **Nikhil Shinde** — AI Product Builder and Founder of Classgrid AI.
+Portfolio website for **Nikhil Shinde** — Founder of Classgrid AI.
 
 Built with React + Vite.
 

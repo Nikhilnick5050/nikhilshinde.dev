@@ -20,7 +20,7 @@ export default function App() {
         </Routes>
       </main>
       <footer className="footer">
-        <p>© {new Date().getFullYear()} Nikhil Shinde · AI Product Builder</p>
+        <p>© {new Date().getFullYear()} Nikhil Shinde</p>
       </footer>
     </div>
   )

@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <Link to="/" className="brand">nikhilshinde.dev</Link>
+      <Link to="/" className="brand">Nikhil Shinde</Link>
       <div className="nav-right">
         <nav className="nav-links">
           {links.map((l) => (
