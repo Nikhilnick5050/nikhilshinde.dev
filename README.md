@@ -6,11 +6,16 @@ Built with React + Vite.
 
 ## Pages
 - Home
-- About
+- About (summary, experience, skills, education)
 - Projects
 - Resume (view + download)
-- Contact (Formspree)
-- Login + Guestbook (MongoDB)
+- Contact (Formspree + email + LinkedIn)
+
+## Design system
+- Fonts: Sora (headings), DM Sans (body)
+- Light/dark mode with a toggle that remembers the choice
+- 12px corners, thin borders, black-and-white buttons
+- Framer Motion soft fade-in only
 
 ## Setup
 
