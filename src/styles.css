@@ -81,21 +81,35 @@ a { color: inherit; }
 .nav-link:hover { color: var(--text); }
 .nav-link.active { color: var(--text); background: var(--card-2); }
 
-.theme-toggle {
+.theme-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+}
+
+.theme-opt {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  width: 32px;
+  height: 28px;
+  border: none;
+  border-radius: 999px;
   background: transparent;
-  color: var(--text);
+  color: var(--muted);
   cursor: pointer;
-  font-size: 1.05rem;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
 }
-.theme-toggle:hover { background: var(--card-2); }
+.theme-opt:hover { background: var(--card-2); color: var(--text); }
+.theme-opt.active {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
 
 .main {
   flex: 1;
