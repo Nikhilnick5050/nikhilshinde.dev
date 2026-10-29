@@ -1,53 +1,55 @@
+import { motion } from 'framer-motion'
+
 const projects = [
   {
     name: 'Classgrid AI',
-    role: 'Founder & Product Lead',
+    desc: 'Live AI agent you can use on the web and call on WhatsApp.',
     link: 'https://chat.classgrid.in',
-    desc: 'A live AI agent that researches with sources, reads files, runs code in a sandbox, creates documents and images, and publishes websites — callable on WhatsApp.',
-    tags: ['AI agents', 'AWS', 'Cloudflare', 'MongoDB', 'Vercel'],
+  },
+  {
+    name: 'classgrid.in',
+    desc: 'Marketing site, documentation, blog and changelog with an AI help assistant.',
+    link: 'https://classgrid.in',
   },
   {
     name: 'GridX',
-    role: 'React UI component library',
-    desc: "Classgrid's own React component library used to keep every Classgrid app consistent.",
-    tags: ['React', 'TypeScript', 'Design system'],
+    desc: "Classgrid's own React UI component library for consistent apps.",
+    link: 'https://classgrid.in',
   },
   {
-    name: 'Classgrid Connector (MCP)',
-    role: 'MCP integration',
-    desc: 'Lets Claude and ChatGPT read a user\'s Classgrid schedules, chats and profile with their permission.',
-    tags: ['MCP', 'Integrations', 'AI'],
-  },
-  {
-    name: 'Grids',
-    role: 'Messaging product',
-    desc: 'Messaging inside Classgrid AI with direct chats, groups, polls and a shared AI chat for up to 4 people.',
-    tags: ['Messaging', 'Real-time', 'Groups'],
+    name: 'Classgrid MCP connector',
+    desc: "Lets Claude and ChatGPT read a user's Classgrid schedules, chats and profile.",
+    link: 'https://classgrid.in',
   },
 ]
 
 export default function Projects() {
   return (
-    <div>
-      <h1>Projects</h1>
-      <p>Work I've led and shipped at Classgrid AI.</p>
-      <div className="section">
+    <motion.div
+      className="section"
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4 }}
+    >
+      <h2>Projects</h2>
+      <div className="grid">
         {projects.map((p) => (
           <div className="card" key={p.name}>
             <h3>{p.name}</h3>
-            <p style={{ color: 'var(--accent)', fontSize: '0.85rem', marginBottom: 8 }}>{p.role}</p>
             <p>{p.desc}</p>
-            <div style={{ marginTop: 10 }}>
-              {p.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
-            </div>
-            {p.link && (
-              <a href={p.link} target="_blank" rel="noreferrer" className="btn secondary" style={{ marginTop: 14 }}>
-                Visit
-              </a>
-            )}
+            <a
+              href={p.link}
+              target="_blank"
+              rel="noreferrer"
+              className="btn secondary"
+              style={{ marginTop: 14 }}
+            >
+              Visit
+            </a>
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }

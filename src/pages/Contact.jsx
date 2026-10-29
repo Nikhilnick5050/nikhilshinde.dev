@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
-const FORM_ID = import.meta.env.VITE_FORMSPREE_ID || 'mgaazrew'
+const FORM_ACTION = 'https://formspree.io/f/mgaazrew'
 
 export default function Contact() {
   const [status, setStatus] = useState('')
@@ -11,7 +12,7 @@ export default function Contact() {
     const data = new FormData(form)
     setStatus('sending')
     try {
-      const res = await fetch(`https://formspree.io/f/${FORM_ID}`, {
+      const res = await fetch(FORM_ACTION, {
         method: 'POST',
         body: data,
         headers: { Accept: 'application/json' },
@@ -28,9 +29,14 @@ export default function Contact() {
   }
 
   return (
-    <div>
-      <h1>Contact</h1>
-      <p>Have a question or opportunity? Send me a message.</p>
+    <motion.div
+      className="section"
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4 }}
+    >
+      <h2>Contact</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
@@ -47,9 +53,34 @@ export default function Contact() {
         <button type="submit" className="btn" disabled={status === 'sending'}>
           {status === 'sending' ? 'Sending…' : 'Send message'}
         </button>
-        {status === 'ok' && <div className="msg ok">Thanks! Your message was sent.</div>}
-        {status === 'err' && <div className="msg err">Something went wrong. Please try again.</div>}
+        {status === 'ok' && (
+          <div className="msg ok">Thanks! Your message was sent.</div>
+        )}
+        {status === 'err' && (
+          <div className="msg err">
+            Something went wrong. Please try again.
+          </div>
+        )}
       </form>
-    </div>
+
+      <div className="card" style={{ marginTop: 24, maxWidth: 480 }}>
+        <p style={{ margin: '0 0 8px' }}>
+          <strong>Email:</strong>{' '}
+          <a href="mailto:nikhil.shinde@classgrid.in">
+            nikhil.shinde@classgrid.in
+          </a>
+        </p>
+        <p style={{ margin: 0 }}>
+          <strong>LinkedIn:</strong>{' '}
+          <a
+            href="https://linkedin.com/in/nikhil-shinde-286937367"
+            target="_blank"
+            rel="noreferrer"
+          >
+            linkedin.com/in/nikhil-shinde-286937367
+          </a>
+        </p>
+      </div>
+    </motion.div>
   )
 }
